@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTagContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email', config('api.max_email_length'))->unique();
-            $table->string('password', config('api.max_password_length'));
+        Schema::create('tag_contacts', function (Blueprint $table) {
+            $table->foreignId('tag_id')->constrained('tags')->onDelete('cascade');
+            $table->foreignId('contact_id')->constrained('contacts')->onDelete('cascade');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tag_contacts');
     }
 }
