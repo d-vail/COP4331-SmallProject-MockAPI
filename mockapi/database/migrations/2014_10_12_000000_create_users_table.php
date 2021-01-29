@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email', config('api.max_email_length'))->unique();
-            $table->string('password', config('api.max_password_length'));
+            $table->string('password', 60);
         });
     }
 
