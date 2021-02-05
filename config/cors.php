@@ -17,17 +17,32 @@ return [
 
     'paths' => ['api/*'],
 
-    'allowed_methods' => ['POST', 'GET', 'DELETE', 'PUT'],
+    'allowed_methods' => ['GET, POST, PUT, DELETE'],
 
-    'allowed_origins' => ['http://localhost:8', 'http://localhost:8080'],
+    'allowed_origins' => ['http://localhost:8080'],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => [
+        'Accept',
+        'Authorization',
+        'Content-Type',
+        'Cookie',
+        'DNT',
+        'Origin',
+        'User-Agent',
+        'X-Requested-With',
+    ],
+    
+    'exposed_headers' => [
+        'Accept',
+        'Authorization',
+        'Origin',
+        'Content-Type',
+        'X-Requested-With',
+    ],
 
-    'exposed_headers' => [],
-
-    'max_age' => 2,
+    'max_age' => 0,
 
     'supports_credentials' => true,
 
