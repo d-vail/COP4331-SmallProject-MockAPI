@@ -18,8 +18,8 @@ use App\Http\Controllers\UserController;
 /**
  * Unsolved Bug in included CORS package. Workaround:
  */
-// header('Access-Control-Allow-Origin: http://localhost:8080');
-// header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
 
 
