@@ -23,27 +23,12 @@ return [
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => [
-        'Accept',
-        'Authorization',
-        'Content-Type',
-        'Cookie',
-        'DNT',
-        'Origin',
-        'User-Agent',
-        'X-Requested-With',
-    ],
-    
-    'exposed_headers' => [
-        'Accept',
-        'Authorization',
-        'Origin',
-        'Content-Type',
-        'X-Requested-With',
-    ],
+    'allowed_headers' => ['*'],
+
+    'exposed_headers' => false,
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];
